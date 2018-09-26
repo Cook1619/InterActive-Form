@@ -2,3 +2,14 @@
 window.onload = function() {
   document.getElementById("name").focus();
 };
+
+let jobTitle = document.getElementById("title")[5];
+
+function otherSelected() {
+  if (jobTitle) {
+    let inputField = document.createElement("INPUT");
+    document.body.insertBefore(inputField, jobTitle);
+    inputField.setAttribute("type", "text");
+  }
+}
+otherSelected();
