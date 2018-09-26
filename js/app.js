@@ -2,7 +2,7 @@
 $("#name").focus();
 
 //Job Role
-function jobRole() {
+jobRole = () => {
   //hide text area
   let textArea = $("#other-job-role").hide();
   //listens for changes on this element
@@ -18,5 +18,16 @@ function jobRole() {
       textArea.hide();
     }
   });
-}
+};
 jobRole();
+
+tShirtInfo = () => {
+  $("#design").on("change", () => {
+    let tShirtValue = $("#design").val();
+    if (tShirtValue === "js puns") {
+      let color = $("#color");
+      console.log(color);
+    }
+  });
+};
+tShirtInfo();
