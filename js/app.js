@@ -66,3 +66,23 @@ tShirtInfo = () => {
   });
 };
 tShirtInfo();
+
+//selects the activities and listens for events
+$(".activities").on("change", () => {
+  //total is initialized
+  let total = 0;
+  //if input name all is checked add 200 to the total
+  if ($("input[name='all']").is(":checked")) {
+    total += 200;
+    //if js-frameoework is checked disable 2 other events in the same time frame and add 100 to the total
+  } else if ($("input[name='js-frameworks']").is(":checked")) {
+    $("input[name='node']").prop("disabled", true);
+    $("input[name='npm']").prop("disabled", true);
+    total += 100;
+    console.log(total);
+  } else {
+    //catch all if not checked, don't disable the checkbox
+    $("input[name='node']").prop("disabled", false);
+    $("input[name='npm']").prop("disabled", false);
+  }
+});
