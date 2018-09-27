@@ -22,11 +22,17 @@ jobRole = () => {
 jobRole();
 
 tShirtInfo = () => {
+  //listens for changes in the s-shirt design field
   $("#design").on("change", () => {
+    //assigns the value to a variable
     let tShirtValue = $("#design").val();
+    console.log(typeof tShirtValue);
+    let color = $("#color")[0];
+    for (let i = 0; i <= color.length; i++) {
+      console.log(color[i]);
+    }
+    //If value is equal to js puns, do this
     if (tShirtValue === "js puns") {
-      let color = $("#color");
-      console.log(color);
     }
   });
 };
