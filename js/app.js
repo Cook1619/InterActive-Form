@@ -1,21 +1,22 @@
 // Selects by id name, and uses the Jquery method FOCUS
 $("#name").focus();
-
+let $textArea = $("#other-job-role");
+let $roleValue = $("#title");
 //Job Role
 jobRole = () => {
   //hide text area
-  let textArea = $("#other-job-role").hide();
+  $textArea.hide();
   //listens for changes on this element
-  $("#title").on("change", () => {
+  $roleValue.on("change", () => {
     //saving the value of the targeted element to a variable
-    let roleValue = $("#title").val();
+    let $roleValue = $("#title").val();
     //comparing the variable to the condition 'other'
-    if (roleValue === "other") {
+    if ($roleValue === "other") {
       //If True show the textarea
-      textArea.show();
+      $textArea.show();
     } else {
       //if false hide the textarea
-      textArea.hide();
+      $textArea.hide();
     }
   });
 };
@@ -30,9 +31,6 @@ tShirtInfo = () => {
     let color = $("#color")[0];
     for (let i = 0; i <= color.length; i++) {
       console.log(color[i]);
-    }
-    //If value is equal to js puns, do this
-    if (tShirtValue === "js puns") {
     }
   });
 };
