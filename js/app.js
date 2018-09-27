@@ -48,8 +48,20 @@ tShirtInfo = () => {
         .attr("selected", false);
       $color.eq(4).hide();
       $color.eq(5).hide();
-    } else {
-      $color.hide();
+    } else if ($tShirtValue === "heart js") {
+      $color
+        .eq(0)
+        .hide()
+        .attr("selected", false);
+      $color.eq(1).hide();
+      $color.eq(2).hide();
+      //If index equals 3,4,5 show them and add attr
+      $color
+        .eq(3)
+        .show()
+        .attr("selected", true);
+      $color.eq(4).show();
+      $color.eq(5).show();
     }
   });
 };
