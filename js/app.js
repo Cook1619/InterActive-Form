@@ -76,7 +76,10 @@ $(".activities").on("change", () => {
     total += 200;
     //if js-frameoework is checked disable 2 other events in the same time frame and add 100 to the total
   } else if ($("input[name='js-frameworks']").is(":checked")) {
-    $("input[name='build-tools']").prop("disabled", true);
+    $("input[name='build-tools']")
+      .prop("disabled", true)
+      .parent()
+      .css("display", "none");
     $("input[name='express']").prop("disabled", true);
     total += 100;
     console.log(total);
@@ -107,6 +110,9 @@ $(".activities").on("change", () => {
     $("input[name='express']").prop("disabled", false);
     $("input[name='js-libs']").prop("disabled", false);
     $("input[name='js-frameworks']").prop("disabled", false);
-    $("input[name='build-tools']").prop("disabled", false);
+    $("input[name='build-tools']")
+      .prop("disabled", false)
+      .parent()
+      .css("display", "inline-block");
   }
 });
