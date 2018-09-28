@@ -1,12 +1,12 @@
 // Selects by id name, and uses the Jquery method FOCUS
 $("#name").focus();
 //Variables used for jobRole funciton
-let $textArea = $("#other-job-role");
+let $inputOther = $("#other-job-role");
 let $roleValue = $("#title");
 //Job Role
 jobRole = () => {
   //hide text area
-  $textArea.hide();
+  $inputOther.hide();
   //listens for changes on this element
   $roleValue.on("change", () => {
     //saving the value of the targeted element to a variable
@@ -14,10 +14,10 @@ jobRole = () => {
     //comparing the variable to the condition 'other'
     if ($roleValueOther === "other") {
       //If True show the textarea
-      $textArea.show();
+      $inputOther.show();
     } else {
       //if false hide the textarea
-      $textArea.hide();
+      $inputOther.hide();
     }
   });
 };
@@ -83,7 +83,6 @@ $(".activities").on("change", () => {
       .parent()
       .css("display", "none");
     total += 100;
-    console.log(total);
   } else if ($("input[name='js-libs']").is(":checked")) {
     $("input[name='node']")
       .parent()
