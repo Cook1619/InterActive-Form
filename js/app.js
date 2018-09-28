@@ -77,39 +77,75 @@ $(".activities").on("change", () => {
     //if js-frameoework is checked disable 2 other events in the same time frame and add 100 to the total
   } else if ($("input[name='js-frameworks']").is(":checked")) {
     $("input[name='build-tools']")
-      .prop("disabled", true)
       .parent()
       .css("display", "none");
-    $("input[name='express']").prop("disabled", true);
+    $("input[name='express']")
+      .parent()
+      .css("display", "none");
     total += 100;
     console.log(total);
   } else if ($("input[name='js-libs']").is(":checked")) {
-    $("input[name='node']").prop("disabled", true);
-    $("input[name='npm']").prop("disabled", true);
+    $("input[name='node']")
+      .parent()
+      .css("display", "none");
+    $("input[name='npm']")
+      .parent()
+      .css("display", "none");
     total += 100;
   } else if ($("input[name='express']").is(":checked")) {
-    $("input[name='js-frameworks']").prop("disabled", true);
-    $("input[name='build-tools']").prop("disabled", true);
+    $("input[name='js-frameworks']")
+      .parent()
+      .css("display", "none");
+    $("input[name='build-tools']")
+      .parent()
+      .css("display", "none");
     total += 100;
   } else if ($("input[name='node']").is(":checked")) {
-    $("input[name='js-libs']").prop("disabled", true);
-    $("input[name='npm']").prop("disabled", true);
+    $("input[name='js-libs']")
+      .parent()
+      .css("display", "none");
+    $("input[name='npm']")
+      .parent()
+      .css("display", "none");
     total += 100;
   } else if ($("input[name='build-tools']").is(":checked")) {
-    $("input[name='express']").prop("disabled", true);
-    $("input[name='js-frameworks']").prop("disabled", true);
+    $("input[name='express']")
+      .parent()
+      .css("display", "none");
+    $("input[name='js-frameworks']")
+      .parent()
+      .css("display", "none");
     total += 100;
   } else if ($("input[name='npm']").is(":checked")) {
-    $("input[name='node']").prop("disabled", true);
-    $("input[name='js-libs']").prop("disabled", true);
+    $("input[name='node']")
+      .parent()
+      .css("display", "none");
+    $("input[name='js-libs']")
+      .parent()
+      .css("display", "none");
     total += 100;
   } else {
     //catch all if not checked, don't disable the checkbox
-    $("input[name='node']").prop("disabled", false);
-    $("input[name='npm']").prop("disabled", false);
-    $("input[name='express']").prop("disabled", false);
-    $("input[name='js-libs']").prop("disabled", false);
-    $("input[name='js-frameworks']").prop("disabled", false);
+    $("input[name='node']")
+      .prop("disabled", false)
+      .parent()
+      .css("display", "inline-block");
+    $("input[name='npm']")
+      .prop("disabled", false)
+      .parent()
+      .css("display", "inline-block");
+    $("input[name='express']")
+      .prop("disabled", false)
+      .parent()
+      .css("display", "inline-block");
+    $("input[name='js-libs']")
+      .prop("disabled", false)
+      .parent()
+      .css("display", "inline-block");
+    $("input[name='js-frameworks']")
+      .prop("disabled", false)
+      .parent()
+      .css("display", "inline-block");
     $("input[name='build-tools']")
       .prop("disabled", false)
       .parent()
