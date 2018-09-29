@@ -66,6 +66,9 @@ tShirtInfo = () => {
   });
 };
 tShirtInfo();
+
+let $totalCharge = $("<span></span>");
+$(".activities").append($totalCharge);
 //total is initialized
 let total = 0;
 //selects the activities and listens for events
@@ -125,5 +128,10 @@ $(".activities").on("change", () => {
   }
   if ($("input[name='npm']").is(":checked")) {
     total += 100;
+  }
+  if (total > 0) {
+    $totalCharge.show().html(`<strong>$${total}</strong>`);
+  } else {
+    $totalCharge.hide();
   }
 });
