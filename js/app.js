@@ -70,9 +70,13 @@ tShirtInfo();
 let $totalCharge = $("<span></span>");
 $(".activities").append($totalCharge);
 //total is initialized
-let total = 0;
+
 //selects the activities and listens for events
 $(".activities").on("change", () => {
+  let total = 0;
+  if ($("input:checked").length === 0) {
+    total = 0;
+  }
   //if input name all is checked add 200 to the total
   if ($("input[name='all']").is(":checked")) {
     total += 200;
