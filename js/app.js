@@ -139,3 +139,9 @@ $(".activities").on("change", () => {
     $totalCharge.hide();
   }
 });
+
+$("#payment").on("change", () => {
+  if ($("#payment").val() === "credit card") {
+    console.log("credit card selected");
+  }
+});
