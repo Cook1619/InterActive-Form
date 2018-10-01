@@ -142,6 +142,20 @@ $(".activities").on("change", () => {
 
 $("#payment").on("change", () => {
   if ($("#payment").val() === "credit card") {
-    console.log("credit card selected");
+    $("#credit-card").show();
+  }
+  if ($("#payment").val() === "paypal") {
+    $("#credit-card").hide();
+    $("fieldset div p")
+      .eq(1)
+      .hide();
+  }
+  if ($("#payment").val() === "bitcoin") {
+    $("#credit-card").hide();
+    $("fieldset div p")
+      .eq(1)
+      .hide();
+  } else {
+    $("fieldset div p").show();
   }
 });
